@@ -26,9 +26,10 @@ function roleAssign() {
       if (this.readyState == 4 && this.status == 200) {
         alert("successfully assign new role");
         //document.getElementById("h1").innerHTML=this.responseText;
+        window.location.href = "../../view/admin/roleAssignment.php";
 
         if (this.responseText.trim() === "success") {
-          window.location.href = "../../view/admin/RoleAssignment.php";
+          window.location.href = "../../view/admin/roleAssignment.php";
           document.getElementById("h1").innerHTML = this.responseText;
         }
       } else if (this.readyState == 4 && this.status == 404) {

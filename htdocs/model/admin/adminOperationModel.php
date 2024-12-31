@@ -38,7 +38,7 @@ function createProject($projectName,$projectType,$projectDetails) // push projec
      function displayAllManagerInfo() // display all manager information
      {
         $con = getConnection();
-        $sql = "select * from userInfo where userType = 'Manager'";
+        $sql = "select * from userinfo where userType = 'Manager'";
         $result = mysqli_query($con, $sql);
         $users = [];
         
@@ -51,7 +51,7 @@ function createProject($projectName,$projectType,$projectDetails) // push projec
      function displayAllDeveloperInfo() // display all developer information
      {
         $con = getConnection();
-        $sql = "select * from userInfo where userType = 'Developer'";
+        $sql = "select * from userinfo where userType = 'Developer'";
         $result = mysqli_query($con, $sql);
         $users = [];
         

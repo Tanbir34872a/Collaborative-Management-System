@@ -1,14 +1,14 @@
 <?php
 @include 'config.php';
 session_start();
-require_once('../../Model/client/usermodel.php');
+require_once('../../model/client/usermodel.php');
 if (isset($_SESSION['flag'])) {
 
-    $conn = getConnection();
-    $email = $_SESSION['email'];
-    $sql = "select * from users where email='$email'";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
+    // $conn = getConnection();
+    // $username = $_SESSION['username'];
+    // $sql = "select * from users where username='$username'";
+    // $result = mysqli_query($conn, $sql);
+    // $row = mysqli_fetch_assoc($result);
 ?>
 
     <!DOCTYPE html>
@@ -88,7 +88,7 @@ if (isset($_SESSION['flag'])) {
 
             <div class="container">
 
-                <form action="../../Controller/client/clientcontroller.php" method="post">
+                <form action="../../controller/client/clientcontroller.php" method="post">
 
                     <label for="account">Account</label><br>
                     <input type="text" id="account" name="account" required> <br><br>

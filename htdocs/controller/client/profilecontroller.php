@@ -1,7 +1,7 @@
 <?php
 session_start();
-
-$conn = mysqli_connect("localhost", "root", "", "task");
+@include '../../model/db.php';
+$conn = getConnection();
 if (isset($_GET['edit'])) {
     $edit_id = $_GET['edit'];
 
