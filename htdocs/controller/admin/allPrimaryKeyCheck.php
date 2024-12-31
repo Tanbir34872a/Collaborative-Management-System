@@ -7,7 +7,7 @@
     $projectName = $_REQUEST['projectName'];
     $projectNameAvailability = availableProjectNameCheck($projectName);
 
-    $username = $_REQUEST['username'];
+    $username = $_COOKIE['username'];
     $userameAvailability = availableUserameCheck($username);
 
     if ($projectNameAvailability) {
