@@ -1,15 +1,15 @@
 <?php
 session_start();
-require_once('../../model/client/usermodel.php');
-require_once('../../model/client/db.php');
+//require_once('../../model/client/usermodel.php');
+require_once('../../model/db.php');
 ?>
 
 <?php
 if (isset($_SESSION['flag'])) {
 
 $conn = getConnection();
-$email = $_SESSION['email'];
-$sql = "select * from users where email='$email'";
+$username = $_COOKIE['username'];
+$sql = "select * from users where username='$username'";
 $result = mysqli_query($conn, $sql);
 $row = mysqli_fetch_assoc($result);
 ?>

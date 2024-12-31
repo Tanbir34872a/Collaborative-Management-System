@@ -5,8 +5,8 @@ require_once('../../model/client/usermodel.php');
 if (isset($_SESSION['flag'])) {
 
     $conn = getConnection();
-    $email = $_SESSION['email'];
-    $sql = "select * from users where email='$email'";
+    $username = $_COOKIE['username'];
+    $sql = "select * from users where username='$username'";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 ?>
@@ -84,7 +84,7 @@ if (isset($_SESSION['flag'])) {
 
             <div class="container">
 
-                <form action="../../Controller/client/clientcontroller.php" method="post">
+                <form action="../../controller/client/clientcontroller.php" method="post">
 
                     <label for="fname">Username</label><br>
                     <input type="text" id="name" name="name" value="<?= $row['username'] ?>" required> <br><br>

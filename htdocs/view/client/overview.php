@@ -1,6 +1,6 @@
 <?php
 session_start();
-@include '../../model/client/db.php';
+@include '../../model/db.php';
 if (isset($_SESSION['flag'])) {
 
 ?>
@@ -71,7 +71,7 @@ if (isset($_SESSION['flag'])) {
                         <tbody>
                             <?php
 
-                            $select_products = mysqli_query($conn, "SELECT * FROM `overviews`");
+                            $select_products = mysqli_query(getConnection(), "SELECT * FROM `overviews`");
                             if (mysqli_num_rows($select_products) > 0) {
                                 while ($row = mysqli_fetch_assoc($select_products)) {
                             ?>

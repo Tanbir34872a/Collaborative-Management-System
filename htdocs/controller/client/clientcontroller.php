@@ -1,6 +1,6 @@
 <?php
 
-@include '../../Model/client/db.php';
+@include '../../model/db.php';
 
 
 if (isset($_POST['feedback'])) {
@@ -9,11 +9,11 @@ if (isset($_POST['feedback'])) {
     $country = $_POST['country'];
     $opinion = $_POST['opinion'];
 
-    $insert_query = mysqli_query($conn, "INSERT INTO `feedbacks`(name, email, country, opinion ) VALUES('$name', '$email', '$country', '$opinion')") or die('query failed');
+    $insert_query = mysqli_query(getConnection(), "INSERT INTO feedbacks (name, email, country, opinion ) VALUES('$name', '$email', '$country', '$opinion')") or die('query failed');
 
     if ($insert_query) {
 
-         header("location: ../../View/client/client.php");
+         header("location: ../../view/client/client.php");
 
     } else {
         echo"error";
@@ -28,11 +28,11 @@ if (isset($_POST['pay'])) {
     $method = $_POST['method'];
     $pid = $_POST['pid'];
 
-    $insert_query = mysqli_query($conn, "INSERT INTO `payments`(account, amount, method, pid ) VALUES('$account', '$amount', '$method', '$pid')") or die('query failed');
+    $insert_query = mysqli_query(getConnection(), "INSERT INTO `payments`(account, amount, method, pid ) VALUES('$account', '$amount', '$method', '$pid')") or die('query failed');
 
     if ($insert_query) {
 
-         header("location: ../../View/client/client.php");
+         header("location: ../../view/client/client.php");
 
     } else {
         echo"error";
