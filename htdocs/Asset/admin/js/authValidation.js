@@ -128,7 +128,7 @@ function checkUsername()
 
     let xhttp = new XMLHttpRequest();
 
-    xhttp.open('post', '../controller/admin/allPrimaryKeyCheck.php', true);
+    xhttp.open('post', '../controller/admin/userNameCheck.php', true);
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
     xhttp.onreadystatechange = function () {

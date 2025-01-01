@@ -28,6 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($updateResult) {
         echo "Project updated successfully.";
+        header('Location: ' . 'code.php');
+        die();
     } else {
         echo "Failed to update project.";
     }

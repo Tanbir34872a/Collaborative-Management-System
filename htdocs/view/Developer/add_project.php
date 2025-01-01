@@ -21,7 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $addResult = addProject($NAME, $summary, $githubLink);
 
     if ($addResult) {
-        echo "Project added successfully.";
+        //echo '<script>alert("Project Added")</script>';
+        header('Location: ' . 'code.php');
+        die();
     } else {
         echo "Failed to add project.";
     }
