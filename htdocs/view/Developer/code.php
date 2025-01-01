@@ -30,6 +30,23 @@ $projects = getAllProject();
     <h3 style="text-align:left;">Collborative Management System </h3>
     <script src="../../Asset/Developer/js/search.js"></script>
     <link rel="stylesheet" href="../../Asset/Developer/css/code.css">
+    <script>
+        function deleteProject(projectId) {
+            if (confirm('Are you sure you want to delete this project?')) {
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', 'code.php?delete_id=' + projectId, true);
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert('Project deleted successfully.');
+                        document.getElementById('project-row-' + projectId).remove();
+                    } else {
+                        alert('Failed to delete project.');
+                    }
+                };
+                xhr.send();
+            }
+        }
+    </script>
 </head>
 <body>
     <form action="../../controller/Developer/addProjectcheck.php" method="post" enctype="">
